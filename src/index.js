@@ -20,8 +20,9 @@ function ProductContainer({ product }){
 }
 
 function App(){
-  return <ProductContainer product = {products[0]}/>
-
+  return products.map((product, i) => {
+    return <ProductContainer key={i} product = {product}/>
+  })
 }
 
 
