@@ -4,17 +4,17 @@ import './index.css';
 
 const products = require('./products.json')
 
-function ProductDescription(props){
+function ProductDescription({description}){
   return(
-    <p>{props.description}</p>
+    <p>{description}</p>
   )
 }
 
-function ProductContainer(props){
+function ProductContainer({ product }){
   return (
     <div>
-    <h2>{props.product.title}</h2>
-    <ProductDescription description = {props.product.description}/>
+    <h2>{product.title}</h2>
+    <ProductDescription description = {product.description}/>
     </div>
   )
 }
