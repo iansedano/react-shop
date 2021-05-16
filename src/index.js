@@ -2,24 +2,25 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
+const products = require('./products.json')
 
-function ProductDescription(){
+function ProductDescription(props){
   return(
-    <p>100GB of RAM and 500TB HD for 300$</p>
+    <p>{props.description}</p>
   )
 }
 
-function ProductContainer(){
+function ProductContainer(props){
   return (
     <div>
-    <h2>Laptop</h2>
-    <ProductDescription/>
+    <h2>{props.product.title}</h2>
+    <ProductDescription description = {props.product.description}/>
     </div>
   )
 }
 
 function App(){
-  return <ProductContainer/>
+  return <ProductContainer product = {products[0]}/>
 
 }
 
