@@ -3,9 +3,23 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 
+function ProductDescription(){
+  return(
+    <p>100GB of RAM and 500TB HD for 300$</p>
+  )
+}
+
+function ProductContainer(){
+  return (
+    <div>
+    <h2>Laptop</h2>
+    <ProductDescription/>
+    </div>
+  )
+}
 
 function App(){
-  return <h1>Hello World!</h1>
+  return <ProductContainer/>
 
 }
 
