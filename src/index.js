@@ -4,6 +4,7 @@ import './index.css';
 
 const products = require('./products.json')
 
+
 function ProductDescription({description}){
   return(
     <p>{description}</p>
@@ -15,6 +16,7 @@ function ProductContainer({ product }){
     <div>
     <h2>{product.title}</h2>
     <ProductDescription description = {product.description}/>
+    <img src={product.image}></img>
     </div>
   )
 }
