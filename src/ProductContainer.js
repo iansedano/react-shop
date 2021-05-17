@@ -6,6 +6,7 @@ function ProductDescription({ description }) {
     display: "-webkit-box",
     "-webkit-line-clamp": "3",
     "-webkit-box-orient": "vertical",
+    margin: "20px"
   };
   return <p style={style}>{description}</p>;
 }
@@ -29,10 +30,36 @@ function ProductTitle({ title }) {
   );
 }
 
+function ProductImage({ src }) {
+  const containerStyle = {
+    height: "40%",
+    width: "90%",
+    margin: "5%",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  };
+
+  return (
+    <div style={containerStyle}>
+      <img
+        src={src}
+        style={{
+          maxHeight: "150px",
+          maxWidth: "100%",
+          objectFit: "contain",
+        }}
+      ></img>
+    </div>
+  );
+}
+
 export function ProductContainer({ product }) {
   const style = {
     margin: "20px",
-    background: "grey",
+    background: "white",
+    border: "2px solid blue",
+    borderRadius: "5px",
     textAlign: "center",
     width: "300px",
     height: "500px",
@@ -41,14 +68,7 @@ export function ProductContainer({ product }) {
     <div style={style}>
       <ProductTitle title={product.title} />
       <ProductDescription description={product.description} />
-      <img
-        src={product.image}
-        style={{
-          maxHeight: "150px",
-          maxWidth: "100%",
-          objectFit: "contain",
-        }}
-      ></img>
+      <ProductImage src={product.image} />
     </div>
   );
 }
