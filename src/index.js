@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-import { Products } from './Products'
+import { ProductGrid } from './Products'
 
+const productList = require('./products.json')
 
-ReactDOM.render(<Products/>,document.getElementById('root'));
+ReactDOM.render(<ProductGrid productList={productList}/>,document.getElementById('root'));

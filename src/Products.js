@@ -1,7 +1,5 @@
 import React from 'react';
 
-const products = require('./products.json')
-
 function ProductDescription({description}){
   const style = {
     "overflow": "hidden",
@@ -56,7 +54,7 @@ function ProductContainer({ product }){
   )
 }
 
-export function Products(){
+export function ProductGrid({productList}){
   const style = {
     "display": "flex",
     "flexWrap": "wrap"
@@ -64,7 +62,7 @@ export function Products(){
   return (
     <div style={style}>
       {
-        products.map((product, i) => {
+        productList.map((product, i) => {
           return <ProductContainer key={i} product = {product}/>
         })
       }
