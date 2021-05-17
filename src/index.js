@@ -6,25 +6,39 @@ const products = require('./products.json')
 
 function ProductDescription({description}){
   const style = {
-    "height": "5.5ex",
     "overflow": "hidden",
-    "text-overflow": "ellipsis"
+    "display": "-webkit-box",
+    "-webkit-line-clamp": "3",
+    "-webkit-box-orient": "vertical"
   }
   return(
     <p style={style}>{description}</p>
   )
 }
 
+function ProductTitle({ title }){
+  const style = {
+    "lineHeight": "1.5em",
+    "height": "9em",
+    "margin": "auto"
+  }
+  return <h2 style={style}>{title}</h2>
+}
+
 function ProductContainer({ product }){
   const style = {
-    "padding": "20px",
+    "margin": "20px",
+    "background": "grey",
     "textAlign": "center",
     "width": "300px",
-    "height": "500px"
+    "height": "500px",
+    "display": "flex",
+    "flexDirection": "column",
+    "justifyContent": "center"
   }
   return (
     <div style={style}>
-      <h2>{product.title}</h2>
+      <ProductTitle title={product.title}/>
       <ProductDescription description = {product.description}/>
       <img
         src={product.image}
