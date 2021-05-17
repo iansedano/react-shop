@@ -5,6 +5,7 @@ export function ProductGrid({ productList }) {
   const style = {
     display: "flex",
     flexWrap: "wrap",
+    justifyContent: "space-evenly"
   };
   return (
     <div style={style}>
