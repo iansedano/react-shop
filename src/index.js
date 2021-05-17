@@ -17,12 +17,21 @@ function ProductDescription({description}){
 }
 
 function ProductTitle({ title }){
-  const style = {
-    "lineHeight": "1.5em",
-    "height": "9em",
-    "margin": "auto"
+  const containerStyle = {
+    "height": "11em",
+    "width": "90%",
+    "margin": "5%",
+    "display": "flex",
+    "justifyContent": "center",
+    "alignItems": "center"
   }
-  return <h2 style={style}>{title}</h2>
+
+  const headerStyle = {
+  }
+
+  return <div style={containerStyle}>
+      <h2 style={headerStyle}>{title}</h2>
+    </div>
 }
 
 function ProductContainer({ product }){
@@ -32,9 +41,6 @@ function ProductContainer({ product }){
     "textAlign": "center",
     "width": "300px",
     "height": "500px",
-    "display": "flex",
-    "flexDirection": "column",
-    "justifyContent": "center"
   }
   return (
     <div style={style}>
