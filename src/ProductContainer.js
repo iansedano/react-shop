@@ -13,7 +13,7 @@ function ProductDescription({ description }) {
 
 function ProductTitle({ title }) {
   const containerStyle = {
-    height: "11em",
+    height: "9em",
     width: "90%",
     margin: "5%",
     display: "flex",
